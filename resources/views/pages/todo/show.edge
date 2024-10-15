@@ -1,0 +1,30 @@
+@layout.app({ title: "Todo Show" })
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <h3 class="text-center">Todo Detail</h3>
+
+        <a href="/todos" class="btn btn-primary">
+          Go Back
+        </a>
+      </div>
+      <div class="card m-3">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-10">
+              <p>{{ todo.title }}</p>
+            </div>
+            <div class="col-2 ">
+              <a href="/todos/{{todo.id}}/edit" class="btn btn-sm btn-info ">Edit</a>
+              <a href="/todos/{{todo.id}}" class="btn btn-sm btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+@end

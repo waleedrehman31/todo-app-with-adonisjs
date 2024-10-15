@@ -1,0 +1,21 @@
+@layout.app({ title: "Welcome page title" })
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <form action="/todos/{{todo.id}}?_method=PUT" method="POST" >
+        {{ csrfField() }}
+        <div class="mb-3">
+          <label for="title" class="form-label">Todo</label>
+          <input type="text" name="title" class="form-control" id="title" placeholder="What you want to do ?" value="{{todo.title}}">
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary ">Edit Todo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+@end

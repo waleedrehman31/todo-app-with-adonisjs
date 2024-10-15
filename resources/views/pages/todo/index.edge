@@ -1,0 +1,40 @@
+@layout.app({ title: "Welcome page title" })
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <h3 class="text-center">My Todos</h3>
+        
+        <a href="/todos/create" class="btn btn-primary">
+          create Todo
+        </a>  
+      </div>
+      @if(todos.length === 0) 
+        <p>No todo Available</p>
+      @else
+          @each(todo in todos)
+          <div class="card m-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-10">
+                  <p>{{ todo.title }}</p>
+                </div>
+                <div class="col-2 ">
+                  <a href="/todos/{{todo.id}}" class="btn btn-sm btn-warning ">View</a>
+                  <a href="/todos/{{todo.id}}/edit" class="btn btn-sm btn-info ">Edit</a>
+                  <form action="/todos/{{todo.id}}?_method=DELETE" method="POST">
+                    {{ csrfField() }}
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          @end
+      @end
+    </div>
+  </div>
+
+</div>
+@end
