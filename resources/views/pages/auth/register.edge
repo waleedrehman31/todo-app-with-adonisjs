@@ -1,0 +1,30 @@
+@layout.app({ title: "Login" })
+
+<div class="container mt-5">
+  <div class="card">
+    <h2 class="text-center">Register</h2>
+    <div class="card-body">
+      <form action="/register" method="POST">
+        {{ csrfField() }}
+        <div class="mb-3">
+          <label for="full_name" class="form-label">Full Name</label>
+          <input type="text" name="full_name" class="form-control" id="full_name" placeholder="full name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" id="email" placeholder="email">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="password" placeholder="password">
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary ">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+@end
